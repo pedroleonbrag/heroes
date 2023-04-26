@@ -1,0 +1,30 @@
+<div class="btn-group" role="group" style="position: relative; float: right;">
+    <button
+      id="btnGroupDrop1"
+      type="button"
+      class="btn btn-primary dropdown-toggle show"
+      data-bs-toggle="dropdown"
+      aria-haspopup="true"
+      aria-expanded="false"
+    >
+      {{powerstats | overall }}
+    </button>
+    <div
+      class="dropdown-menu"
+      aria-labelledby="btnGroupDrop1"
+      style="
+        position: relative;
+        inset: 0px auto auto 0px;
+        margin: 0px;
+        transform: translate(0px, 40px);
+      "
+      data-popper-placement="bottom-start"
+    >
+      <a class="dropdown-item">Intelligence <span>{{powerstats.intelligence}}</span></a>
+      <a class="dropdown-item">Strength <span>{{powerstats.strength}}</span></a>
+      <a class="dropdown-item">Speed <span>{{powerstats.speed}}</span></a>
+      <a class="dropdown-item">Durability <span>{{powerstats.durability}}</span></a>
+      <a class="dropdown-item">Power <span>{{powerstats.power}}</span></a>
+      <a class="dropdown-item">Combat <span>{{powerstats.combat}}</span></a>
+    </div>
+  </div>

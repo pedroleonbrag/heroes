@@ -1,0 +1,64 @@
+<div style="padding: 90px">
+  <div class="row mb-4">
+    <div class="col-md-12">
+      <app-team-overview [heroes]="team"></app-team-overview>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-6 col-md-6 col-lg-3" *ngFor="let hero of team">
+      <div class="card" style="margin-bottom: 30px">
+        <h4 class="card-header">
+          {{ hero.name }}
+          <app-hero-dropdown-powerstats
+            [powerstats]="hero.powerstats"
+          ></app-hero-dropdown-powerstats>
+        </h4>
+
+        <div style="max-height: 250px; overflow: hidden">
+          <img
+            src="{{ hero.images.md }}"
+            style="object-fit: none; height: 100%; width: auto"
+          />
+        </div>
+        <div class="card-body">
+          <div
+            class="card-text"
+            style="position: relative; float: left; font-size: 13px"
+          >
+            <span class="bi bi-geo-alt">{{
+              hero.biography.placeOfBirth || hero.biography.firstAppearance
+                | slice : 0 : 25
+            }}</span>
+          </div>
+        </div>
+        <div>
+          <span class="badge bg-light first">{{
+            hero.appearance.race || "[no race]"
+          }}</span>
+          <span class="badge bg-light">{{ hero.appearance.gender }}</span>
+          <span class="badge bg-light" [ngClass]="hero.biography.alignment">{{
+            hero.biography.alignment
+          }}</span>
+        </div>
+        <div class="card-body">
+          <button
+            type="button"
+            class="btn btn-outline-secondary"
+            (click)="openDialog(hero)"
+          >
+            View
+          </button>
+          <button
+            type="button"
+            (click)="deleteHero(hero)"
+            class="btn btn-outline-secondary"
+            style="position: relative; float: right"
+          >
+            Delete
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

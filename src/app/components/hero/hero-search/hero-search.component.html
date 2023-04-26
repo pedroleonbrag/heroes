@@ -1,0 +1,81 @@
+<div class="container" style="padding: 90px">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="col-md-3 col-12">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Filter"
+          (keyup)="keyUpFilter($event)"
+        />
+      </div>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th></th>
+            <th>Name</th>
+            <th>Height</th>
+            <th>Weight</th>
+            <th>Itll</th>
+            <th>Strh</th>
+            <th>Speed</th>
+            <th>Dur</th>
+            <th>Pwr</th>
+            <th>Cmbt</th>
+            <th>Algm</th>
+            <th>Occupation</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr
+            *ngFor="
+              let h of heroes
+                | filter : searchText
+                | paginate : { itemsPerPage: 6, currentPage: p }
+            "
+          >
+            <td>
+              <img
+                ngSrc="{{ h.images.sm }}"
+                width="50"
+                height="50"
+                class="image"
+              />
+            </td>
+            <td>{{ h.name }} | {{ h.slug }}</td>
+            <td>{{ h.appearance.height[1] }}</td>
+            <td>{{ h.appearance.weight[1] }}</td>
+            <td>{{ h.powerstats.intelligence }}</td>
+            <td>{{ h.powerstats.strength }}</td>
+            <td>{{ h.powerstats.speed }}</td>
+            <td>{{ h.powerstats.durability }}</td>
+            <td>{{ h.powerstats.power }}</td>
+            <td>{{ h.powerstats.combat }}</td>
+            <td>
+              <span
+                class="badge"
+                [ngClass]="
+                  h.biography.alignment === 'bad' ? 'bg-warning' : 'bg-info'
+                "
+                >{{ h.biography.alignment }}</span
+              >
+            </td>
+            <td>{{ h.work.occupation }}</td>
+            <td>
+              <button
+                *ngIf="canBeAdded(h)"
+                type="button"
+                class="btn btn-outline-primary"
+                (click)="addToTeam(h)"
+              >
+                Add
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <pagination-controls (pageChange)="p = $event"></pagination-controls>
+    </div>
+  </div>
+</div>

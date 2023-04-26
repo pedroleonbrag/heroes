@@ -1,1 +1,35 @@
-/* You can add global styles to this file, and also import other style files */
+.ngx-pagination .current {
+    background: #b58900 !important;
+}
+
+.ngx-pagination li.current {
+    border-radius: 17%;
+}
+
+.progress-bar{
+    color: white !important;
+}
+
+.progress-bar.bg-normal{
+    background-color: white;
+}
+
+.progress-bar.bg-violet{
+  background-color: #3D2797;
+}
+
+.progress-bar.bg-gray{
+  background-color: gray;
+}
+
+.progress-bar.bg-orange{
+    background-color: #D6A200;
+}
+
+.progress{
+    height: 12px;
+}
+
+.progress.small{
+    height: 7px;
+}

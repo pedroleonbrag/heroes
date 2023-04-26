@@ -1,0 +1,23 @@
+@media (min-width: 768px) {
+  .col-md-6 {
+    width: 40%;
+  }
+}
+
+.card.login{
+  background: url(../../../assets/image.png);
+  filter: brightness(90%);
+}
+
+.card.login form{
+  filter: brightness(100%);
+}
+
+.card.login .form-control{
+  color: black !important;
+  background-color: white !important;
+}
+
+.login .form-label{
+  color: white !important;
+}
