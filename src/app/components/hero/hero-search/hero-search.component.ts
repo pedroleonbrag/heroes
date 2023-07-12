@@ -39,7 +39,6 @@ export class HeroSearchComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.subscription1 = this.heroes$.subscribe((heroes) => {
       this.heroes = heroes;
-      console.log(heroes);
     });
 
     this.subscription2 = this.searchSubject

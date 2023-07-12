@@ -3,10 +3,9 @@ export interface Hero {
   name: string;
   slug: string;
   powerstats: Powerstats;
-  appearance: Appearence;
+  appearance: Appearance;
   biography: Biography;
   work: Work;
-  connections: Connections;
   images: Images;
 }
 
@@ -34,11 +33,11 @@ export interface Powerstats {
   combat: number;
 }
 
-export interface Appearence {
+export interface Appearance {
   gender: string;
   race: string;
-  height: any[];
-  weight: any[];
+  height: string;
+  weight: string;
   eyeColor: string;
   hairColor: string;
 }
@@ -46,7 +45,7 @@ export interface Appearence {
 export interface Biography {
   fullName: string;
   alterEgos: string;
-  aliases: string[];
+  aliases: string;
   placeOfBirth: string;
   firstAppearance: string;
   publisher: string;

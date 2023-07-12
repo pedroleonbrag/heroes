@@ -1,4 +1,4 @@
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
@@ -21,6 +21,7 @@ import { BarWidthAllDirective } from './directives/bar-width-all.directive';
 import { BarWidthDirective } from './directives/bar-width.directive';
 import { MatDialogModule } from '@angular/material/dialog';
 import { HeroModalComponent } from './components/hero/hero-modal/hero-modal.component';
+import { JwtInterceptor } from './interceptors/jwt-interceptor.interceptor';
 
 
 @NgModule({
@@ -53,6 +54,11 @@ import { HeroModalComponent } from './components/hero/hero-modal/hero-modal.comp
   providers: [
     { provide: JWT_OPTIONS, useValue: JWT_OPTIONS },
     JwtHelperService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: JwtInterceptor,
+      multi: true
+    }
   ],
   bootstrap: [AppComponent],
 })

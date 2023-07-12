@@ -48,7 +48,7 @@ export class TeamOverviewComponent implements OnChanges, DoCheck {
         this.heroes.length > 0
           ? Math.floor(this.heroes.reduce(
               (acc, h) =>
-                acc + Number(h.appearance.height[1].replace(' cm', '')),
+                acc + Number(h.appearance.height.replace(' cm', '')),
               0
             ) / this.heroes.length)
           : 0,
@@ -56,7 +56,7 @@ export class TeamOverviewComponent implements OnChanges, DoCheck {
         this.heroes.length > 0
           ? Math.floor(this.heroes.reduce(
               (acc, h) =>
-                acc + Number(h.appearance.weight[1].replace(' kg', '')),
+                acc + Number(h.appearance.weight.replace(' kg', '')),
               0
             ) / this.heroes.length)
           : 0,
