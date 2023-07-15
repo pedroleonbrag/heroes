@@ -21,7 +21,7 @@ export class LoginComponent {
     private router: Router
   ) {
 
-    //this.heroService.test();
+    this.heroService.test();
 
   }
 

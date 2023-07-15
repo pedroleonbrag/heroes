@@ -36,7 +36,7 @@
           <span class="badge bg-light first">{{
             hero.appearance.race || "[no race]"
           }}</span>
-          <span class="badge bg-light">{{ hero.appearance.gender }}</span>
+          <span class="badge bg-light">{{ hero.appearance.gender | genderPipe }}</span>
           <span class="badge bg-light" [ngClass]="hero.biography.alignment">{{
             hero.biography.alignment
           }}</span>

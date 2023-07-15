@@ -1,5 +1,5 @@
 import { Directive, Input, HostBinding } from '@angular/core';
-import { MAXIMUM_POWERSTATS } from '../models/team.model';
+import { MAXIMUM_POWERSTATS } from '../models/team.overview.model';
 
 @Directive({
   selector: '[barWidthAll]',

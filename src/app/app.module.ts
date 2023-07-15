@@ -22,6 +22,12 @@ import { BarWidthDirective } from './directives/bar-width.directive';
 import { MatDialogModule } from '@angular/material/dialog';
 import { HeroModalComponent } from './components/hero/hero-modal/hero-modal.component';
 import { JwtInterceptor } from './interceptors/jwt-interceptor.interceptor';
+import { NewHeroComponent } from './components/hero/new/new-hero.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
+import { HeroSearchCardsComponent } from './components/hero/hero-search-cards/hero-search-cards.component';
+import { AlignmentPipe } from './pipes/alignment.pipe';
+import { GenderPipe } from './pipes/gender.pipe';
 
 
 @NgModule({
@@ -33,12 +39,16 @@ import { JwtInterceptor } from './interceptors/jwt-interceptor.interceptor';
     HeroAppearencePipe,
     HeroDropdownPowerstatsComponent,
     OverallPipe,
+    AlignmentPipe,
+    GenderPipe,
     HeroSearchComponent,
     FilterPipe,
     TeamOverviewComponent,
     BarWidthAllDirective,
     BarWidthDirective,
     HeroModalComponent,
+    NewHeroComponent,
+    HeroSearchCardsComponent,
   ],
   imports: [
     BrowserModule,
@@ -50,6 +60,8 @@ import { JwtInterceptor } from './interceptors/jwt-interceptor.interceptor';
     NgxPaginationModule,
     NgbModule,
     MatDialogModule,
+    BrowserAnimationsModule,
+    MatProgressBarModule
   ],
   providers: [
     { provide: JWT_OPTIONS, useValue: JWT_OPTIONS },

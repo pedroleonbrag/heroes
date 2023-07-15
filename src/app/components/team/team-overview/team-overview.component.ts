@@ -1,7 +1,7 @@
 import { Component, DoCheck, Input, OnChanges } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Hero } from 'src/app/models';
-import { PartialTeam, TeamOverview } from 'src/app/models/team.model';
+import { PartialTeam, TeamOverview } from 'src/app/models/team.overview.model';
 
 @Component({
   selector: 'app-team-overview',

@@ -5,6 +5,7 @@ import { Subscription } from 'rxjs';
 import { TeamService } from 'src/app/services/team.service';
 import { MatDialog } from '@angular/material/dialog';
 import { HeroModalComponent } from '../hero/hero-modal/hero-modal.component';
+import { Team } from 'src/app/models/team.model';
 
 declare var $: any;
 
@@ -26,10 +27,11 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     const teamIds = this.teamService.getTeamIds();
-    this.subscription = this.heroService
-      .getTeam(teamIds)
-      .subscribe((heroes) => {
-        this.team = heroes;
+    this.subscription = this.teamService
+      .getTeam()
+      .subscribe((team) => {
+        console.log(team);
+        this.team = team != null ? team.heroes : [];
       });
   }
 
@@ -38,6 +40,16 @@ export class HomeComponent implements OnInit, OnDestroy {
     this.team.splice(ix, 1);
     this.teamService.saveTeamIds(this.team.map((h) => h.id));
     this.cd.detectChanges();
+
+    this.teamService.deleteFromTeam(hero).subscribe({
+      next: (r: Team) => {
+        console.log(r);
+      },
+      error: (e) => {
+        console.log(e);
+      },
+    })
+
   }
 
   openDialog(hero: Hero) {

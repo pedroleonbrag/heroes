@@ -1,0 +1,89 @@
+<div class="container" style="padding: 90px">
+  <div class="row" style="margin-bottom: 25px">
+    <div class="col-md-4 col-12">
+      <input
+        type="text"
+        class="form-control"
+        [(ngModel)]="filter.name"
+        placeholder="Name | Slug"
+      />
+    </div>
+    <div class="col-md-2 col-12">
+      <input
+        type="text"
+        class="form-control"
+        [(ngModel)]="filter.race"
+        placeholder="Race"
+      />
+    </div>
+    <div class="col-md-2 col-12">
+      <select class="form-select" [(ngModel)]="filter.alignment" placeholder="Alignment">
+        <option value="B">Bad</option>
+        <option value="G">Good</option>
+      </select>
+    </div>
+    <div class="col-md-2 col-12">
+      <button type="button" class="btn btn-primary" (click)="search()">
+        Filter
+      </button>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-4 col-md-6 col-sm-12 col-12" *ngFor="let hero of heroes$ | async">
+      <div class="card" style="margin-bottom: 30px">
+        <h4 class="card-header">
+          {{ hero.name }}
+          <app-hero-dropdown-powerstats
+            [powerstats]="hero.powerstats"
+          ></app-hero-dropdown-powerstats>
+        </h4>
+
+        <div style="max-height: 250px; overflow: hidden">
+          <!-- <img
+                src="{{ hero.images.md }}"
+                style="object-fit: none; height: 100%; width: auto"
+              /> -->
+          <img
+            [ngSrc]="hero.images.lg"
+            [alt]="hero.name"
+            width="370"
+            height="493"
+          />
+        </div>
+        <div class="card-body">
+          <div
+            class="card-text"
+            style="position: relative; float: left; font-size: 13px"
+          >
+            <span class="bi bi-geo-alt">{{
+              hero.biography.placeOfBirth || hero.biography.firstAppearance
+                | slice : 0 : 25
+            }}</span>
+          </div>
+        </div>
+        <div>
+          <span class="badge bg-light first">{{
+            hero.appearance.race || "[no race]"
+          }}</span>
+          <span class="badge bg-light">{{
+            hero.appearance.gender | genderPipe
+          }}</span>
+          <span class="badge bg-light" [ngClass]="hero.biography.alignment">{{
+            hero.biography.alignment | alignmentPipe
+          }}</span>
+        </div>
+        <div class="card-body">
+          <button
+                type="button"
+                title="Add to my team"
+                class="btn btn-outline-primary"
+                (click)="addToTeam(hero)"
+              >
+                Add
+              </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

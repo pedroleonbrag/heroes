@@ -45,9 +45,11 @@ export interface Appearance {
 export interface Biography {
   fullName: string;
   alterEgos: string;
-  aliases: string;
+  aliases?: string;
   placeOfBirth: string;
-  firstAppearance: string;
-  publisher: string;
-  alignment: string;
+  firstAppearance?: string;
+  publisher?: string;
+  alignment?: string;
 }
+
+export type NewHero = Omit<Hero, 'id' | 'images'>;
