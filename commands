@@ -1,8 +1,0 @@
-scp -i my-key-pair.pem microservicio-0.0.1-SNAPSHOT.jar ec2-user@3.145.202.183:/home/ec2-user
-
-scp -i my-key-pair.pem microservicio-0.0.1-SNAPSHOT.jar ec2-user@3.138.109.12:/home/ec2-user
-scp -i my-key-pair.pem hero-ms.jar ec2-user@ec2-3-138-109-12.us-east-2.compute.amazonaws.ccom
-
-java -jar microservicio-0.0.1-SNAPSHOT.jar
-
-nohup java -jar  microservicio-0.0.1-SNAPSHOT.jar > output.log 2>&1&
