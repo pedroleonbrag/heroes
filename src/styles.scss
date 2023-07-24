@@ -1,3 +1,7 @@
+:root {
+    color-scheme: indigo !important;    
+}
+
 .ngx-pagination .current {
     background: #b58900 !important;
 }
@@ -33,3 +37,5 @@
 .progress.small{
     height: 7px;
 }
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

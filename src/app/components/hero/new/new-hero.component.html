@@ -1,0 +1,282 @@
+<div class="container" style="margin-top: 100px">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="card login">
+        <div class="card-body">
+          <form [formGroup]="form" novalidate (ngSubmit)="onSubmit()">
+            <div class="container">
+              <div class="row">
+                <div class="col-md-6">
+                  <label class="form-label mt-2">Name *</label>
+                  <input
+                    class="form-control"
+                    formControlName="name"
+                    placeholder="Enter name"
+                  />
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label mt-2">Slug *</label>
+                  <input
+                    formControlName="slug"
+                    class="form-control"
+                    placeholder="Slug"
+                  />
+                </div>
+
+                <div class="col-md-12">
+                  <div class="row">
+                    <div class="col-md-2">
+                      <label class="form-label mt-3">Powerstats</label>
+                      <input
+                        type="number"
+                        min="0"
+                        max="100"
+                        class="form-control"
+                        formControlName="intelligence"
+                        placeholder="Intelligence"
+                      />
+                    </div>
+                    <div class="col-md-2">
+                      <label class="form-label mt-3">&nbsp;</label>
+                      <input
+                        type="number"
+                        min="0"
+                        max="100"
+                        formControlName="strength"
+                        class="form-control"
+                        placeholder="strength"
+                      />
+                    </div>
+                    <div class="col-md-2">
+                      <label class="form-label mt-3">&nbsp;</label>
+                      <input
+                        type="number"
+                        min="0"
+                        max="100"
+                        formControlName="speed"
+                        class="form-control"
+                        placeholder="speed"
+                      />
+                    </div>
+                    <div class="col-md-2">
+                      <label class="form-label mt-3">&nbsp;</label>
+                      <input
+                        type="number"
+                        min="0"
+                        max="100"
+                        formControlName="durability"
+                        class="form-control"
+                        placeholder="durability"
+                      />
+                    </div>
+                    <div class="col-md-2">
+                      <label class="form-label mt-3">&nbsp;</label>
+                      <input
+                        type="number"
+                        min="0"
+                        max="100"
+                        formControlName="power"
+                        class="form-control"
+                        placeholder="power"
+                      />
+                    </div>
+                    <div class="col-md-2">
+                      <label class="form-label mt-3">&nbsp;</label>
+                      <input
+                        type="number"
+                        min="0"
+                        max="100"
+                        formControlName="combat"
+                        class="form-control"
+                        placeholder="combat"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-12">
+                  <div class="row">
+                    <div class="col-md-2">
+                      <label class="form-label mt-3">Appearance</label>
+                      <!-- <input
+                        class="form-control"
+                        formControlName="gender"
+                        placeholder="gender"
+                      /> -->
+
+                      <select class="form-select" formControlName="gender" placeholder="gender">
+                        <option value="M">Male</option>
+                        <option value="F">Female</option>
+                      </select>
+
+                    </div>
+                    <div class="col-md-2">
+                      <label class="form-label mt-3">&nbsp;</label>
+                      <input
+                        formControlName="race"
+                        class="form-control"
+                        placeholder="Race"
+                      />
+                    </div>
+                    <div class="col-md-2">
+                      <label class="form-label mt-3">*</label>
+                      <input
+                        formControlName="height"
+                        class="form-control"
+                        placeholder="Height"
+                      />
+                    </div>
+                    <div class="col-md-2">
+                      <label class="form-label mt-3">*</label>
+                      <input
+                        formControlName="weight"
+                        class="form-control"
+                        placeholder="Weight"
+                      />
+                    </div>
+                    <div class="col-md-2">
+                      <label class="form-label mt-3">&nbsp;</label>
+                      <input
+                        formControlName="eyeColor"
+                        class="form-control"
+                        placeholder="Eye color"
+                      />
+                    </div>
+                    <div class="col-md-2">
+                      <label class="form-label mt-3">&nbsp;</label>
+                      <input
+                        formControlName="hairColor"
+                        class="form-control"
+                        placeholder="Hair color"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-12">
+                  <div class="row">
+                    <div class="col-md-3">
+                      <label class="form-label mt-3">Biography</label>
+                      <input
+                        class="form-control"
+                        formControlName="fullName"
+                        placeholder="Full name"
+                      />
+                    </div>
+                    <div class="col-md-3">
+                      <label class="form-label mt-3">&nbsp;</label>
+                      <input
+                        formControlName="alterEgos"
+                        class="form-control"
+                        placeholder="Alter egos"
+                      />
+                    </div>
+                    <div class="col-md-3">
+                      <label class="form-label mt-3">*</label>
+                      <input
+                        formControlName="placeOfBirth"
+                        class="form-control"
+                        placeholder="Place of birth"
+                      />
+                    </div>
+                    <div class="col-md-3">
+                     <!-- <label class="form-label mt-3">*</label>
+                       <input
+                        formControlName="firstAppearance"
+                        class="form-control"
+                        placeholder="firstAppearance"
+                      /> -->
+
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-12">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <label class="form-label mt-3">Work</label>
+                      <input
+                        class="form-control"
+                        formControlName="occupation"
+                        placeholder="Occupation"
+                      />
+                    </div>
+                    <div class="col-md-6">
+                      <label class="form-label mt-3">&nbsp;</label>
+                      <input
+                        formControlName="base"
+                        class="form-control"
+                        placeholder="Base"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-12 mt-4">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <input class="form-control" type="file" (change)="onFileSelected($event)" />
+                    </div>
+                    <div class="col-md-6">
+                      <img
+                        *ngIf="previewImage"
+                        [src]="previewImage"
+                        style="max-height: 100px;"
+                        alt="Preview"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-6 mt-4">
+                  <button
+                    type="button"
+                    [disabled]="!form.valid"
+                    class="btn btn-primary"
+                    (click)="onSubmit()"
+                  >
+                    Create
+                  </button>
+                </div>
+                <div class="col-md-12 mt-2">
+                  <mat-progress-bar *ngIf="showProgressBar"  mode="indeterminate"></mat-progress-bar>
+                </div>
+              </div>
+            </div>
+
+            <div class="container">
+              <div class="row">
+                <div class="col-md-12 p-3">
+                  <div
+                    class="alert alert-dismissible alert-light"
+                    *ngIf="this.errorMessage"
+                  >
+                    <button
+                      type="button"
+                      class="btn-close"
+                      data-bs-dismiss="alert"
+                    ></button>
+                    <strong>Heads up!</strong> {{ errorMessage }}.
+                  </div>
+
+                  <div
+                    class="alert alert-dismissible alert-secondary"
+                    *ngIf="this.successMessage"
+                  >
+                    <button
+                      type="button"
+                      class="btn-close"
+                      data-bs-dismiss="alert"
+                    ></button>
+                    <strong>Well done!</strong> {{ successMessage
+                    }}<a href="#" class="alert-link"></a>.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

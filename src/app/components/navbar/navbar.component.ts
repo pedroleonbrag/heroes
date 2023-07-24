@@ -33,4 +33,9 @@ export class NavbarComponent {
     this.authService.loginEventValue = false;
     this.router.navigate(['/login']);
   }
+
+  new() {
+    this.router.navigate(['/new']);
+  }
+
 }

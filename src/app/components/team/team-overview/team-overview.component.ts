@@ -1,7 +1,7 @@
 import { Component, DoCheck, Input, OnChanges } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Hero } from 'src/app/models';
-import { PartialTeam, TeamOverview } from 'src/app/models/team.model';
+import { PartialTeam, TeamOverview } from 'src/app/models/team.overview.model';
 
 @Component({
   selector: 'app-team-overview',
@@ -48,7 +48,7 @@ export class TeamOverviewComponent implements OnChanges, DoCheck {
         this.heroes.length > 0
           ? Math.floor(this.heroes.reduce(
               (acc, h) =>
-                acc + Number(h.appearance.height[1].replace(' cm', '')),
+                acc + Number(h.appearance.height.replace(' cm', '')),
               0
             ) / this.heroes.length)
           : 0,
@@ -56,7 +56,7 @@ export class TeamOverviewComponent implements OnChanges, DoCheck {
         this.heroes.length > 0
           ? Math.floor(this.heroes.reduce(
               (acc, h) =>
-                acc + Number(h.appearance.weight[1].replace(' kg', '')),
+                acc + Number(h.appearance.weight.replace(' kg', '')),
               0
             ) / this.heroes.length)
           : 0,

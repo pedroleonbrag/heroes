@@ -36,7 +36,7 @@
             "
           >
             <td>
-              <img
+              <img *ngIf="h.images && h.images.sm"
                 ngSrc="{{ h.images.sm }}"
                 width="50"
                 height="50"
@@ -44,8 +44,8 @@
               />
             </td>
             <td>{{ h.name }} | {{ h.slug }}</td>
-            <td>{{ h.appearance.height[1] }}</td>
-            <td>{{ h.appearance.weight[1] }}</td>
+            <td>{{ h.appearance.height }}</td>
+            <td>{{ h.appearance.weight }}</td>
             <td>{{ h.powerstats.intelligence }}</td>
             <td>{{ h.powerstats.strength }}</td>
             <td>{{ h.powerstats.speed }}</td>
@@ -56,7 +56,7 @@
               <span
                 class="badge"
                 [ngClass]="
-                  h.biography.alignment === 'bad' ? 'bg-warning' : 'bg-info'
+                  h.biography.alignment === 'B' ? 'bg-warning' : 'bg-info'
                 "
                 >{{ h.biography.alignment }}</span
               >

@@ -4,6 +4,9 @@ import { HeroSearchComponent } from './components/hero/hero-search/hero-search.c
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { authFnGuard } from './guards/auth.fn.guard';
+import { NewHeroComponent } from './components/hero/new/new-hero.component';
+import { HeroSearchCardsComponent } from './components/hero/hero-search-cards/hero-search-cards.component';
+import { RegisterComponent } from './components/register/register.component';
 
 const routes: Routes = [
   {
@@ -24,9 +27,26 @@ const routes: Routes = [
     title: 'Search',
   },
   {
+    path: 'search-cards',
+    component: HeroSearchCardsComponent,
+    canActivate: [authFnGuard],
+    title: 'Search',
+  },
+  {
+    path: 'new',
+    component: NewHeroComponent,
+    canActivate: [authFnGuard],
+    title: 'New',
+  },
+  {
     path: 'login',
     component: LoginComponent,
     title: 'Login',
+  },
+  {
+    path: 'register',
+    component: RegisterComponent,
+    title: 'Register',
   },
 ];
 
