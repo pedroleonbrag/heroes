@@ -6,6 +6,7 @@ import { LoginComponent } from './components/login/login.component';
 import { authFnGuard } from './guards/auth.fn.guard';
 import { NewHeroComponent } from './components/hero/new/new-hero.component';
 import { HeroSearchCardsComponent } from './components/hero/hero-search-cards/hero-search-cards.component';
+import { RegisterComponent } from './components/register/register.component';
 
 const routes: Routes = [
   {
@@ -41,6 +42,11 @@ const routes: Routes = [
     path: 'login',
     component: LoginComponent,
     title: 'Login',
+  },
+  {
+    path: 'register',
+    component: RegisterComponent,
+    title: 'Register',
   },
 ];
 

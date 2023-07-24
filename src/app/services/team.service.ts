@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import { Team } from '../models/team.model';
 import { HttpClient } from '@angular/common/http';
 import { Hero } from '../models';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root',
@@ -25,15 +26,15 @@ export class TeamService {
   }
 
   getTeam(): Observable<Team> {
-    return this.http.get<Team>('/api/team');
+    return this.http.get<Team>(`${environment.apiUrl}/api/team`);
   }
 
-  deleteFromTeam(hero: Hero): Observable<Team> {
-    return this.http.post<Team>('/api/deleteFromTeam', hero);
+  deleteFromTeam(hero: Hero): Observable<Team> {  
+    return this.http.post<Team>(`${environment.apiUrl}/api/deleteFromTeam`, hero);
   }
 
-  addToTeam(hero: Hero): Observable<Team> {
-    return this.http.post<Team>('/api/addToTeam', hero);
+  addToTeam(hero: Hero): Observable<any> {
+    return this.http.post<any>(`${environment.apiUrl}/api/addToTeam`, hero);
   }
 
 }

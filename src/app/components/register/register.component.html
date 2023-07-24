@@ -1,5 +1,4 @@
-
-<div class="container" style="margin-top: 100px;">
+<div class="container" style="margin-top: 100px">
   <div class="row justify-content-center">
     <div class="col-md-6">
       <div class="card login">
@@ -8,48 +7,71 @@
             <fieldset>
               <div class="form-group">
                 <label for="exampleInputEmail1" class="form-label mt-4"
-                  >Email</label
+                  >Registration</label
                 >
                 <input
                   type="email"
                   class="form-control"
                   aria-describedby="emailHelp"
-                  formControlName="email"
-                  placeholder="Enter email"
+                  formControlName="username"
+                  placeholder="Enter Username"
                 />
               </div>
               <div class="form-group">
-                <label for="exampleInputPassword1" class="form-label mt-4"
-                  >Password</label
-                >
+                
                 <input
                   type="password"
                   formControlName="password"
                   value="react"
                   class="form-control"
-                  placeholder="Password"
+                  placeholder="Enter Password"
                 />
               </div>
-              <div class="form-group mt-4" >
+              <div class="form-group">
+                
+                <input
+                  type="password"
+                  formControlName="passwordRepeated"
+                  value="react"
+                  class="form-control"
+                  placeholder="Repeat Password"
+                />
+              </div>
+              <div class="form-group mt-4">
                 <button
                   type="button"
                   [disabled]="!form.valid"
                   class="btn btn-primary"
                   (click)="onSubmit()"
                 >
-                  Login
+                  Register
                 </button>
-                <a [routerLink]="['/register']" class="register-link">Register</a>
+                <a [routerLink]="['/login']" class="register-link">Login</a>
               </div>
             </fieldset>
           </form>
-          <div class="alert alert-dismissible alert-light" *ngIf="this.errorMessage">
+          <div
+            class="alert alert-dismissible alert-light"
+            *ngIf="this.errorMessage"
+          >
             <button
               type="button"
               class="btn-close"
               data-bs-dismiss="alert"
             ></button>
-            <strong>Heads up!</strong> {{errorMessage}}.
+            <strong>Heads up!</strong> {{ errorMessage }}.
+          </div>
+          <div
+            class="alert alert-dismissible alert-secondary"
+            *ngIf="this.message"
+          >
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="alert"
+            ></button>
+            {{ message }}.
+            <a [routerLink]="['/login']" class="alert-link">Go to login</a>
           </div>
         </div>
       </div>

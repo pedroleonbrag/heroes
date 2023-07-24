@@ -43,7 +43,7 @@ export class LoginComponent {
         },
         error: (e) => {
           console.log(e);
-          this.errorMessage = e.message
+          this.errorMessage = 'Check your credentials'
         },
       });
     }

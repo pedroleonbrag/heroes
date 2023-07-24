@@ -28,6 +28,7 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
 import { HeroSearchCardsComponent } from './components/hero/hero-search-cards/hero-search-cards.component';
 import { AlignmentPipe } from './pipes/alignment.pipe';
 import { GenderPipe } from './pipes/gender.pipe';
+import { RegisterComponent } from './components/register/register.component';
 
 
 @NgModule({
@@ -49,6 +50,7 @@ import { GenderPipe } from './pipes/gender.pipe';
     HeroModalComponent,
     NewHeroComponent,
     HeroSearchCardsComponent,
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,

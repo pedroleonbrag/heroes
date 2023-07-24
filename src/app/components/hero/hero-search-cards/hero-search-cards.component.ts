@@ -42,11 +42,11 @@ export class HeroSearchCardsComponent implements OnInit {
 
   addToTeam(hero: Hero) {
     this.teamService.addToTeam(hero).subscribe({
-      next: (r: Team) => {
+      next: (r: any) => {
         console.log(r);
       },
       error: (e) => {
-        console.log(e);
+        console.log(e.error);
       },
     })
   }
